@@ -11,12 +11,12 @@ export const SITE = {
 
   // ---- Aboutページの内容 ----
   avatarEmoji: "🎮",          // アイコン画像を用意したら avatarImage に置き換え
-  avatarImage: "",            // 例: "/images/avatar.png"
+  avatarImage: "public/images/avatar-icon.jpg",            // 例: "/images/avatar.png"
   about: [
-    "ここに詳しめの自己紹介を書きます。ものづくりを始めたきっかけや、好きなジャンル、大切にしていることなど。",
-    "段落を分けたいときは、この配列に文字列を追加するだけです。",
+    "制作ゲームやプロジェクトの紹介していきます。",
+    "宜しければ、プロジェクトに触れてみてください。",
   ],
-  hobbies: "ゲーム、ドット絵、散歩など、趣味をここに書きます。",
+  hobbies: "ゲーム、モノづくり、バドミントン、ゴルフ。",
 
   // ▼ 経歴(上が新しい順でも古い順でもOK。追記するだけで増えます)
   history: [
