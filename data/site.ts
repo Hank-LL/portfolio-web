@@ -11,7 +11,7 @@ export const SITE = {
 
   // ---- Aboutページの内容 ----
   avatarEmoji: "🎮",          // アイコン画像を用意したら avatarImage に置き換え
-  avatarImage: "public/images/avatar-icon.jpg",            // 例: "/images/avatar.png"
+  avatarImage: "/images/avatar-icon.jpg",            // 例: "/images/avatar.png"
   about: [
     "制作ゲームやプロジェクトの紹介していきます。",
     "宜しければ、プロジェクトに触れてみてください。",
