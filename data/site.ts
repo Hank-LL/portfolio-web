@@ -1,12 +1,12 @@
 // ▼ 自己紹介まわりはここを編集
 export const SITE = {
-  name: "YOUR NAME",
-  logo: { main: "yourname", accent: ".dev" }, // ヘッダー左上のロゴ表記
-  role: "ゲームクリエイター / ソフトウェアエンジニア",
+  name: "Hank ViVi",
+  logo: { main: "HankViVi", accent: ".dev" }, // ヘッダー左上のロゴ表記
+  role: "ゲームクリエイター / ソフトウェアエンジニア / ロボティクスAIエンジニア", 
   lead: "ここに自己紹介文を書きます。何を作るのが好きか、どんな価値を届けたいかを2〜3文でまとめると読みやすくなります。",
   email: "you@example.com",
-  github: "https://github.com/yourname",
-  twitter: "https://x.com/yourname",
+  github: "https://github.com/Hank-LL",
+  twitter: "https://x.com/8ankS_G",
   contactMessage: "お仕事のご依頼やご質問がございましたら、お気軽にお問い合わせください。",
 
   // ---- Aboutページの内容 ----
