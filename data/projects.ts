@@ -1,0 +1,95 @@
+// =====================================================================
+// ▼ 作品を追加するときは、この配列にオブジェクトを1つ追記するだけ ▼
+//    追記して git push すれば、Vercelが自動でサイトを更新します。
+//    スクリーンショットは public/images/ に置いて image に指定します。
+// =====================================================================
+
+export type Project = {
+  title: string;
+  description: string;
+  tags: string[];       // 使用技術など(タグ絞り込みに使われます)
+  platform?: string;    // 公開先の表記(例: "Steam" / "unityroom" / "Web")
+  date?: string;        // 公開日など(例: "2025年12月31日")
+  emoji?: string;       // 画像がないときに表示するアイコン
+  image?: string;       // 例: "/images/starhopper.png"(public/images/ に置く)
+  projectUrl?: string;  // 「プロジェクトを見る」で飛ぶURL
+  video?: string;       // 紹介動画。"/videos/xxx.mp4"(public/videos/ に置く)またはYouTubeのURL
+  repoUrl?: string;     // GitHubリポジトリ(なければ省略)
+  featured?: boolean;   // true にするとトップページにも表示されます
+};
+
+export const PROJECTS: Project[] = [
+  {
+    title: "サンプルゲーム『STAR HOPPER』",
+    description:
+      "星から星へ跳び移る2Dアクション。unityroomで公開中。ゲームジャム48時間で制作。",
+    tags: ["Unity", "C#", "ゲームジャム"],
+    platform: "unityroom",
+    date: "2025年10月1日",
+    emoji: "🚀",
+    projectUrl: "https://unityroom.com/",
+    repoUrl: "https://github.com/",
+    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // 例: YouTubeでもmp4でもOK
+    featured: true,
+  },
+  {
+    title: "Steam公開サンプル『VOID GARDEN』",
+    description:
+      "Steamアイコンの表示確認用サンプル。デッキ構築型ローグライクの想定。",
+    tags: ["Unity", "C#", "Steam"],
+    platform: "Steam",
+    date: "2025年12月31日",
+    emoji: "🌱",
+    projectUrl: "https://store.steampowered.com/",
+    featured: true,
+  },
+  {
+    title: "itch.io公開サンプル『NIGHT LOOP』",
+    description:
+      "itch.ioアイコンの表示確認用サンプル。ゲームジャム参加作品の想定。",
+    tags: ["Godot", "GDScript", "ゲームジャム"],
+    platform: "itch.io",
+    date: "2025年7月17日",
+    emoji: "🌙",
+    projectUrl: "https://itch.io/",
+    featured: true,
+  },
+  {
+    title: "BOOTH頒布サンプル『ドット絵素材集』",
+    description:
+      "Boothアイコンの表示確認用サンプル。素材集やツールの頒布の想定。",
+    tags: ["ドット絵", "素材"],
+    platform: "BOOTH",
+    date: "2025年5月5日",
+    emoji: "🎨",
+    projectUrl: "https://booth.pm/",
+  },
+  {
+    title: "HuggingFace公開サンプル『pixel-gen』",
+    description:
+      "HuggingFaceアイコンの表示確認用サンプル。ドット絵生成モデルのデモの想定。",
+    tags: ["Python", "PyTorch", "機械学習"],
+    platform: "Hugging Face",
+    date: "2025年4月10日",
+    emoji: "🤗",
+    projectUrl: "https://huggingface.co/",
+  },
+  {
+    title: "GitHub公開サンプル『img-min』",
+    description:
+      "GitHubアイコンの表示確認用サンプル。画像をまとめて圧縮するCLIツールの想定。",
+    tags: ["Node.js", "TypeScript", "CLI"],
+    platform: "GitHub",
+    date: "2025年3月2日",
+    emoji: "🛠️",
+    repoUrl: "https://github.com/",
+  },
+];
+
+// ▼ スキルもここに追記するだけ(Aboutページに表示されます)
+export const SKILLS = [
+  { name: "Unity / C#", detail: "2Dアクションを中心にゲームを◯本制作" },
+  { name: "TypeScript / React", detail: "Webアプリの個人開発・チーム開発" },
+  { name: "Git / GitHub", detail: "チーム開発でのブランチ運用に慣れています" },
+  { name: "デザイン", detail: "FigmaでのUIモック作成、ドット絵" },
+];
