@@ -20,16 +20,14 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    title: "サンプルゲーム『STAR HOPPER』",
+    title: "君が引く手",
     description:
-      "星から星へ跳び移る2Dアクション。unityroomで公開中。ゲームジャム48時間で制作。",
-    tags: ["Unity", "C#", "ゲームジャム"],
+      "Unity1週間ゲームジャム[ひく]参加作品。『手を引く』か『手を引かない』かを選択するだけのマルチエンディングノベルゲーム",
+    tags: ["Unity", "C#"],
     platform: "unityroom",
-    date: "2025年10月1日",
-    emoji: "🚀",
-    projectUrl: "https://unityroom.com/",
-    repoUrl: "https://github.com/",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // 例: YouTubeでもmp4でもOK
+    date: "2025年8月11日",
+    projectUrl: "https://unityroom.com/games/kimigahikute",
+    image: "/images/projects/kimigahikute.png",
     featured: true,
   },
   {
@@ -41,6 +39,7 @@ export const PROJECTS: Project[] = [
     date: "2025年12月31日",
     emoji: "🌱",
     projectUrl: "https://store.steampowered.com/",
+    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // 例: YouTubeでもmp4でもOK
     featured: true,
   },
   {
