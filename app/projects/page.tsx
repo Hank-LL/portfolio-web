@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Projects" };
 
 export default function ProjectsPage() {
   return (
-    <section className="page">
+    <section className="page projects-page">
       <Reveal>
         <h2 className="section-title">Projects</h2>
         <p className="section-sub">
