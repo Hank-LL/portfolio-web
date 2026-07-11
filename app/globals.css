@@ -1,4 +1,6 @@
+/* ---------- テーマ: 夜(デフォルト) ---------- */
 :root {
+  color-scheme: dark;
   --bg: #0f1220;
   --bg-soft: #151a2e;
   --panel: #1a2038;
@@ -6,9 +8,42 @@
   --ink: #e9ebf7;
   --ink-dim: #9aa2c7;
   --accent: #8b7cff;
+  --accent-hover: #a598ff;
   --accent-soft: rgba(139, 124, 255, 0.14);
+  --on-accent: #0f1220; /* アクセント色の上に載せる文字色 */
   --warm: #ffc66b;
+  --header-bg: rgba(15, 18, 32, 0.75);
   --radius: 14px;
+}
+
+/* ---------- テーマ: 昼(オレンジがかった朝の光) ----------
+   夜=紫ベース+オレンジ差し色 ⇄ 昼=オレンジベース+紫差し色、と
+   アクセントを入れ替えて「同じサイトの昼と夜」を演出する */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fbe3c4;
+  --bg-soft: #f8d8b0;
+  --panel: #fffaf0;
+  --line: #eccda0;
+  --ink: #46362a;
+  --ink-dim: #97795c;
+  --accent: #e8720e;
+  --accent-hover: #c95f06;
+  --accent-soft: rgba(232, 114, 14, 0.16);
+  --on-accent: #fff6e8;
+  --warm: #8b7cff;
+  --header-bg: rgba(253, 238, 219, 0.7);
+}
+/* 昼の空: 夕焼け写真のような 紫 → ピンク → オレンジ のグラデーション */
+[data-theme="light"] body {
+  background: linear-gradient(
+    180deg,
+    #d9c4ee 0%,
+    #f0c3c8 40%,
+    #fac89e 75%,
+    #ffd9a3 100%
+  );
+  background-attachment: fixed;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -19,7 +54,7 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
 }
-::selection { background: var(--accent); color: #0f1220; }
+::selection { background: var(--accent); color: var(--on-accent); }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 button { font-family: inherit; }
@@ -29,14 +64,14 @@ header {
   position: fixed; inset: 0 0 auto 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 28px;
-  background: rgba(15, 18, 32, 0.75);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
 .logo {
   font-family: var(--font-pixel), monospace;
   /* 画面幅に応じて滑らかに縮小(モバイルでナビと重ならないように) */
-  font-size: clamp(0.9rem, 2.5vw + 0.35rem, 1.15rem);
+  font-size: clamp(0.85rem, 2.5vw + 0.3rem, 1.15rem);
   letter-spacing: 0.05em;
   white-space: nowrap;
 }
@@ -85,8 +120,8 @@ h1 .cursor {
   transition: transform 0.2s, border-color 0.2s, background 0.2s;
 }
 .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: #0f1220; }
-.btn.primary:hover { background: #a598ff; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { background: var(--accent-hover); }
 .hero-grid-deco {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background-image: linear-gradient(var(--line) 1px, transparent 1px),
@@ -118,7 +153,7 @@ section.page { padding-top: 130px; min-height: 80vh; }
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .tag:hover { border-color: var(--accent); }
-.tag.active { background: var(--accent); color: #0f1220; }
+.tag.active { background: var(--accent); color: var(--on-accent); }
 
 /* ---------- flip cards ---------- */
 /* Projects ページはカードを大きく見せるため幅を広げる */
@@ -153,6 +188,16 @@ section.projects-page { max-width: 1300px; }
 }
 .flip-card.flipped .flip-inner { transform: rotateX(180deg); }
 
+/* カードとカルーセルは画像の上に暗いスクリムを重ねる構造のため、
+   ライトテーマでも内部は常に夜配色の文字色で描画する */
+.flip-front, .flip-back, .carousel {
+  --panel: #1a2038;
+  --bg-soft: #151a2e;
+  --line: #2a3152;
+  --ink: #e9ebf7;
+  --ink-dim: #9aa2c7;
+  color: var(--ink);
+}
 .flip-front, .flip-back {
   position: absolute; inset: 0;
   backface-visibility: hidden; -webkit-backface-visibility: hidden;
@@ -247,8 +292,8 @@ section.projects-page { max-width: 1300px; }
   padding: 9px 0; border-radius: 8px; border: 1px solid var(--line);
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.card-links a.play { background: var(--accent); border-color: var(--accent); color: #0f1220; flex: 2; }
-.card-links a.play:hover { background: #a598ff; }
+.card-links a.play { background: var(--accent); border-color: var(--accent); color: var(--on-accent); flex: 2; }
+.card-links a.play:hover { background: var(--accent-hover); }
 .card-links a.repo:hover { border-color: var(--ink-dim); }
 
 /* ---------- about ---------- */
@@ -322,8 +367,9 @@ footer {
   html { scroll-behavior: auto; }
 }
 @media (max-width: 640px) {
-  header { padding: 12px 16px; }
-  nav { gap: 14px; font-size: 0.82rem; }
+  header { padding: 12px 14px; }
+  nav { gap: 12px; font-size: 0.8rem; }
+  .theme-toggle { width: 30px; height: 30px; }
   section { padding: 56px 20px; }
   section.page { padding-top: 110px; }
   .flip-card { aspect-ratio: 16 / 10; }
@@ -344,6 +390,59 @@ footer {
 }
 .header-icons a:hover, .header-icons a:focus-visible {
   color: var(--ink); background: var(--accent-soft);
+}
+
+/* ---------- theme toggle (太陽⇄月) ---------- */
+.theme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  background: transparent; border: none; cursor: pointer;
+  color: var(--ink-dim);
+  transition: color 0.2s, background 0.2s, transform 0.15s;
+}
+.theme-toggle:hover, .theme-toggle:focus-visible {
+  color: var(--warm); background: var(--accent-soft);
+}
+.theme-toggle:active { transform: scale(0.85); }
+.sun-moon { overflow: visible; }
+.sun-core {
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.3, 0.8, 0.3, 1);
+  /* 夜 = 月: 少し大きい円に黒丸マスクを重ねて三日月にする */
+  transform: scale(1.4);
+}
+.moon-hole {
+  transition: transform 0.5s cubic-bezier(0.3, 0.8, 0.3, 1);
+  /* 重なりを浅くするほど月が太る */
+  transform: translate(-9px, 3px);
+}
+.sun-beams {
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.3, 0.8, 0.3, 1), opacity 0.35s;
+  opacity: 0;
+  transform: scale(0.4) rotate(-40deg);
+}
+/* 昼 = 太陽: マスクを外に逃がして光線を出す */
+[data-theme="light"] .sun-core { transform: scale(1); }
+[data-theme="light"] .moon-hole { transform: none; }
+[data-theme="light"] .sun-beams { opacity: 1; transform: none; }
+[data-theme="light"] .theme-toggle:hover .sun-beams { transform: rotate(30deg); }
+
+/* ---------- テーマ切替: 円形ワイプ (View Transitions API) ---------- */
+/* .vt-circle が付いている間だけデフォルトのクロスフェードを無効化して
+   clip-path の円形アニメーションに置き換える */
+.vt-circle::view-transition-old(root),
+.vt-circle::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* ---------- テーマ切替: スムーズフェード(View Transitions非対応時の代替) ---------- */
+.theme-fade, .theme-fade *, .theme-fade *::before, .theme-fade *::after {
+  transition:
+    background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, box-shadow 0.35s ease,
+    fill 0.35s ease, stroke 0.35s ease !important;
 }
 
 /* ---------- hero avatar ---------- */
@@ -413,7 +512,7 @@ footer {
 .avatar-link .hero-avatar { transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
 .avatar-link:hover .hero-avatar, .avatar-link:focus-visible .hero-avatar {
   transform: scale(1.06); border-color: var(--warm);
-  box-shadow: 0 0 0 5px rgba(255, 198, 107, 0.18);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--warm) 18%, transparent);
 }
 
 /* ---------- featured carousel ---------- */

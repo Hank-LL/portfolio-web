@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SITE } from "@/data/site";
 import { XIcon, GitHubIcon } from "@/components/icons";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -52,6 +53,7 @@ export default function Header() {
             <GitHubIcon />
           </a>
         </div>
+        <ThemeToggle />
       </div>
     </header>
   );

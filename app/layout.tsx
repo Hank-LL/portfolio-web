@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DotGothic16, Zen_Kaku_Gothic_New, IBM_Plex_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import Header from "@/components/Header";
 import { SITE } from "@/data/site";
 import "./globals.css";
@@ -37,13 +38,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    // suppressHydrationWarning: next-themes が初期化時に <html> へ data-theme を
+    // 付与するため、サーバーとの属性差分の警告を抑止する(html タグのみに作用)
+    <html lang="ja" suppressHydrationWarning>
       <body className={`${pixel.variable} ${body.variable} ${mono.variable}`}>
-        <Header />
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()} {SITE.name} — built with Next.js
-        </footer>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark">
+          <Header />
+          <main>{children}</main>
+          <footer>
+            © {new Date().getFullYear()} {SITE.name} — built with Next.js
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
