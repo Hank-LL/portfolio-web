@@ -33,7 +33,13 @@ header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
-.logo { font-family: var(--font-pixel), monospace; font-size: 1.15rem; letter-spacing: 0.05em; }
+.logo {
+  font-family: var(--font-pixel), monospace;
+  /* 画面幅に応じて滑らかに縮小(モバイルでナビと重ならないように) */
+  font-size: clamp(0.9rem, 2.5vw + 0.35rem, 1.15rem);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
 .logo span { color: var(--accent); }
 nav { display: flex; gap: 26px; font-size: 0.9rem; font-weight: 500; }
 nav a { color: var(--ink-dim); transition: color 0.2s; position: relative; }
@@ -316,7 +322,8 @@ footer {
   html { scroll-behavior: auto; }
 }
 @media (max-width: 640px) {
-  nav { gap: 16px; font-size: 0.82rem; }
+  header { padding: 12px 16px; }
+  nav { gap: 14px; font-size: 0.82rem; }
   section { padding: 56px 20px; }
   section.page { padding-top: 110px; }
   .flip-card { aspect-ratio: 16 / 10; }
@@ -382,7 +389,9 @@ footer {
 .contact-value { font-size: 1.02rem; font-weight: 700; }
 
 @media (max-width: 640px) {
-  .header-icons { padding-left: 10px; gap: 2px; }
+  /* SNSアイコンはContactページにあるため、モバイルヘッダーでは非表示
+     (将来テーマ切替ボタンを追加したらこの席に置く) */
+  .header-icons { display: none; }
   .header-right { gap: 10px; }
   .hero-avatar { width: 72px; height: 72px; }
   .hero-lead { font-size: 1rem; }
