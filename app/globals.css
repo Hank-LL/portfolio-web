@@ -24,7 +24,8 @@
   --bg: #fbe3c4;
   --bg-soft: #f8d8b0;
   --panel: #fffaf0;
-  --line: #eccda0;
+  /* 半透明の焦げ茶: グラデーション背景のどの色の上でも罫線が見えるように */
+  --line: rgba(93, 68, 42, 0.3);
   --ink: #46362a;
   --ink-dim: #97795c;
   --accent: #e8720e;
@@ -130,6 +131,8 @@ h1 .cursor {
   mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
 }
+/* 昼はグラデーション背景に格子が溶けやすいので濃いめに */
+[data-theme="light"] .hero-grid-deco { opacity: 0.4; }
 
 /* ---------- sections / pages ---------- */
 section { max-width: 960px; margin: 0 auto; padding: 70px 28px; }
