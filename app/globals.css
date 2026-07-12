@@ -127,12 +127,12 @@ h1 .cursor {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background-image: linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 44px 44px; opacity: 0.18;
+  background-size: 44px 44px; opacity: 0.35;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
 }
 /* 昼はグラデーション背景に格子が溶けやすいので濃いめに */
-[data-theme="light"] .hero-grid-deco { opacity: 0.4; }
+[data-theme="light"] .hero-grid-deco { opacity: 0.25; }
 
 /* ---------- sections / pages ---------- */
 section { max-width: 960px; margin: 0 auto; padding: 70px 28px; }
@@ -438,6 +438,15 @@ footer {
 .vt-circle::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
+}
+
+/* テーマ切替(View Transitions)中はスナップショット描画で
+   backface-visibility が無視される環境(特にモバイル)があり、
+   フリップカードの裏面が一瞬表に描かれてしまう。
+   切替中だけ「裏面」を明示的に隠して防ぐ */
+.vt-guard .flip-card:not(.flipped) .flip-back,
+.vt-guard .flip-card.flipped .flip-front {
+  visibility: hidden;
 }
 
 /* ---------- テーマ切替: スムーズフェード(View Transitions非対応時の代替) ---------- */

@@ -30,6 +30,8 @@ function runCircle(btn: HTMLElement, applyTheme: () => void, done: () => void) {
   const root = document.documentElement;
   // このクラスが付いている間だけデフォルトのクロスフェードを無効化
   root.classList.add("vt-circle");
+  // 切替中はフリップカードの裏面が誤描画される環境があるため隠す
+  root.classList.add("vt-guard");
 
   const rect = btn.getBoundingClientRect();
   const x = rect.left + rect.width / 2;
@@ -59,6 +61,7 @@ function runCircle(btn: HTMLElement, applyTheme: () => void, done: () => void) {
   });
   transition.finished.finally(() => {
     root.classList.remove("vt-circle");
+    root.classList.remove("vt-guard");
     done();
   });
 }
@@ -68,11 +71,17 @@ function runCircle(btn: HTMLElement, applyTheme: () => void, done: () => void) {
 function runSmooth(applyTheme: () => void, done: () => void) {
   const doc = document as DocWithVT;
   if (doc.startViewTransition) {
+    const root = document.documentElement;
+    // 切替中はフリップカードの裏面が誤描画される環境があるため隠す
+    root.classList.add("vt-guard");
     // View Transitions のデフォルト = 画面全体の短いクロスフェード
     const transition = doc.startViewTransition(() => {
       flushSync(applyTheme);
     });
-    transition.finished.finally(done);
+    transition.finished.finally(() => {
+      root.classList.remove("vt-guard");
+      done();
+    });
     return;
   }
   // 非対応ブラウザ: 全要素の色をCSS transitionで短くフェードさせる
