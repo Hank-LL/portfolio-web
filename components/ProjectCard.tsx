@@ -89,7 +89,10 @@ export default function ProjectCard({
 
             <div className="flip-back-content">
               <div className="flip-back-head">
-                <span className="plat-square" style={{ background: plat.color }}>
+                <span
+                  className="plat-square"
+                  style={{ background: plat.gradient ?? plat.color }}
+                >
                   {platformIcon(plat, 20)}
                 </span>
                 <div className="flip-back-titles">
@@ -105,7 +108,13 @@ export default function ProjectCard({
 
               <div className="card-tags">
                 {project.tags.map((t) => (
-                  <span key={t} style={{ background: plat.color, color: plat.fg ?? "#fff" }}>
+                  <span
+                    key={t}
+                    style={{
+                      background: plat.gradient ?? plat.color,
+                      color: plat.fg ?? "#fff",
+                    }}
+                  >
                     {t}
                   </span>
                 ))}
@@ -121,7 +130,10 @@ export default function ProjectCard({
                   <>
                     <a
                       className="back-btn"
-                      style={{ background: plat.color, color: plat.fg ?? "#fff" }}
+                      style={{
+                        background: plat.gradient ?? plat.color,
+                        color: plat.fg ?? "#fff",
+                      }}
                       href={project.projectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -143,7 +155,11 @@ export default function ProjectCard({
                   project.repoUrl && (
                     <a
                       className="back-btn"
-                      style={{ background: getPlatform("GitHub").color }}
+                      style={{
+                        background:
+                          getPlatform("GitHub").gradient ??
+                          getPlatform("GitHub").color,
+                      }}
                       href={project.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"

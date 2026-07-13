@@ -72,14 +72,29 @@ function GlobeIcon({ size = 18 }: { size?: number }) {
 export type PlatformDef = {
   color: string; // ブランドカラー(バッジ・タグ・ボタンに使われる)
   fg?: string;   // タグ・ボタンの文字色(省略時は白。明るい色の背景用)
+  gradient?: string; // アイコンバッジ専用の背景。指定するとバッジだけこちらを使う
   icon: (size: number) => React.ReactNode;
   img?: string; // 公式ロゴ画像を使う場合はURLかパスを指定(SVGより優先されます)
   // 例: img: "/icons/unityroom.png"(public/icons/ に置く)
 };
 
 const DEFS: { match: RegExp; def: PlatformDef }[] = [
-  { match: /github/i, def: { color: "#333a42", icon: (s) => <GitHubIcon size={s} /> } },
-  { match: /steam/i, def: { color: "#2a475e", icon: (s) => <SteamIcon size={s} /> } },
+  {
+    match: /github/i,
+    def: {
+      color: "#333a42",
+      gradient: "linear-gradient(135deg, #5a6470 0%, #24292f 85%)",
+      icon: (s) => <GitHubIcon size={s} />,
+    },
+  },
+  {
+    match: /steam/i,
+    def: {
+      color: "#2a475e",
+      gradient: "linear-gradient(135deg, #4e9dca 0%, #2a475e 30%, #171a21 100%)",
+      icon: (s) => <SteamIcon size={s} />,
+    },
+  },
   { match: /itch/i, def: { color: "#fa5c5c", icon: (s) => <GamepadIcon size={s} />, img: "https://cdn.simpleicons.org/itchdotio/white" } },
   { match: /unityroom/i, def: { color: "#2f80ed", icon: (s) => <DoorIcon size={s} /> } },
   { match: /booth/i, def: { color: "#fc4d50", icon: (s) => <BagIcon size={s} /> } },
@@ -119,7 +134,7 @@ export function PlatformBadge({
 }) {
   if (!platform) return null;
   const p = getPlatform(platform);
-  const style = { background: p.color, width: size, height: size };
+  const style = { background: p.gradient ?? p.color, width: size, height: size };
   const inner = platformIcon(p, Math.round(size * 0.55));
 
   if (href) {
