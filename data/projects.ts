@@ -24,12 +24,16 @@ export const PROJECTS: Project[] = [
   {
     title: "君が引く手",
     description:
-      "Unity1週間ゲームジャム[ひく]参加作品。『手を引く』か『手を引かない』かを選択するだけのマルチエンディングノベルゲーム",
+      "Unity1週間ゲームジャム[ひく]参加作品。『手を引く』か『手を引かない』かを選択するだけのマルチエンディングノベルゲーム。実況実績あり！ ",
     tags: ["Unity", "C#"],
     platform: "unityroom",
     date: "2025年8月11日",
     projectUrl: "https://unityroom.com/games/kimigahikute",
-    image: "/images/projects/kimigahikute.png",
+    images: [
+      "/images/projects/kimigahikute.png",
+      "/images/projects/kimigahikute-choice.webp",
+      "/images/projects/kimigahikute-locker.webp",
+    ],
     featured: true,
   },
   {
