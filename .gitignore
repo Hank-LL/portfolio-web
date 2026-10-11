@@ -4,3 +4,9 @@ out/
 .vercel
 .env*.local
 .DS_Store
+
+# Claude Code の個人設定
+.claude/settings.local.json
+
+# TypeScript のビルドキャッシュ
+*.tsbuildinfo
