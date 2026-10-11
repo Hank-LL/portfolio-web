@@ -687,6 +687,101 @@ footer {
   .video-close { top: -12px; right: -6px; }
 }
 
+/* ---------- photo gallery ---------- */
+.gallery-btn svg { margin-left: 0; }
+/* カード表面左上の枚数バッジ */
+.photo-count {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: 999px;
+  background: rgba(15, 18, 32, 0.72); color: #fff;
+  border: 1px solid var(--line); backdrop-filter: blur(4px);
+  font-family: var(--font-mono), monospace; font-size: 0.72rem; line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.photo-count:hover, .photo-count:focus-visible {
+  border-color: var(--accent); transform: scale(1.06);
+}
+
+.gallery-modal {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(8, 10, 20, 0.9);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  animation: modalFade 0.25s ease;
+  /* ライトテーマでも暗い背景の上なので夜配色で描画する */
+  --panel: #1a2038;
+  --bg-soft: #151a2e;
+  --line: #2a3152;
+  --ink: #e9ebf7;
+  --ink-dim: #9aa2c7;
+  color: var(--ink);
+}
+.gallery-inner {
+  position: relative; width: min(1040px, 100%);
+  display: flex; flex-direction: column; gap: 12px;
+  animation: modalZoom 0.28s cubic-bezier(0.3, 0.8, 0.3, 1);
+}
+.gallery-stage {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  height: min(72vh, 600px);
+  background: #000; border-radius: var(--radius); border: 1px solid var(--line);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.gallery-main {
+  max-width: 100%; max-height: 100%; object-fit: contain;
+  animation: modalFade 0.3s ease;
+  user-select: none; -webkit-user-drag: none;
+}
+.gallery-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(15, 18, 32, 0.65); color: #fff;
+  border: 1px solid var(--line); backdrop-filter: blur(4px);
+  font-size: 1.6rem; line-height: 1; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.gallery-arrow:hover, .gallery-arrow:focus-visible {
+  border-color: var(--accent); background: rgba(15, 18, 32, 0.85);
+}
+.gallery-arrow.left { left: 12px; }
+.gallery-arrow.right { right: 12px; }
+.gallery-counter {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  padding: 4px 11px; border-radius: 999px;
+  background: rgba(15, 18, 32, 0.72); color: var(--ink);
+  font-family: var(--font-mono), monospace; font-size: 0.72rem;
+}
+.gallery-thumbs {
+  display: flex; gap: 8px; justify-content: safe center;
+  overflow-x: auto; padding: 4px 2px;
+  scrollbar-width: thin;
+}
+.gallery-thumb {
+  flex: 0 0 auto; width: 92px; aspect-ratio: 16 / 10;
+  padding: 0; border-radius: 8px; overflow: hidden;
+  border: 2px solid transparent; background: #000;
+  opacity: 0.5; cursor: pointer;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-thumb:hover, .gallery-thumb:focus-visible { opacity: 0.85; }
+.gallery-thumb.active { opacity: 1; border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  .gallery-modal { padding: 12px; }
+  .gallery-stage { height: auto; aspect-ratio: 4 / 3; }
+  .gallery-arrow { width: 38px; height: 38px; font-size: 1.4rem; }
+  .gallery-arrow.left { left: 8px; }
+  .gallery-arrow.right { right: 8px; }
+  .gallery-thumb { width: 68px; }
+}
+
 /* ---------- projects toolbar / sort menu ---------- */
 .projects-toolbar {
   display: flex; justify-content: space-between; align-items: flex-start;
