@@ -28,6 +28,7 @@ export default function ProjectCard({
   const onMouseLeave = () => setTilt({ rx: 0, ry: 0 });
 
   return (
+    <>
     <div
       className={`flip-card ${flipped ? "flipped" : ""}`}
       role="button"
@@ -173,14 +174,16 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
-
-      {videoOpen && project.video && (
-        <VideoModal
-          src={project.video}
-          title={project.title}
-          onClose={() => setVideoOpen(false)}
-        />
-      )}
     </div>
+
+    {/* モーダルはカードの外に置く(ポータル内のクリックがカードの裏返しに伝わらないように) */}
+    {videoOpen && project.video && (
+      <VideoModal
+        src={project.video}
+        title={project.title}
+        onClose={() => setVideoOpen(false)}
+      />
+    )}
+    </>
   );
 }
