@@ -87,8 +87,9 @@ export const PROJECTS: Project[] = [
 
 // ▼ スキルもここに追記するだけ(Aboutページに表示されます)
 export const SKILLS = [
-  { name: "Unity / C#", detail: "2Dアクションを中心にゲームを◯本制作" },
-  { name: "TypeScript / React", detail: "Webアプリの個人開発・チーム開発" },
-  { name: "Git / GitHub", detail: "チーム開発でのブランチ運用に慣れています" },
-  { name: "デザイン", detail: "FigmaでのUIモック作成、ドット絵" },
+  { name: "Unity / C#", detail: "ゲーム制作やAIモデル開発で使用" },
+  { name: "TypeScript / Next.js", detail: "Webアプリの個人開発・チーム開発" },
+  { name: "Git / GitHub", detail: "チーム開発でのプロジェクト運用" },
+  { name: "Hugging Face", detail: "フィジカルAIの行動モデルを共有。" },
+  { name: "Python", detail: "機械学習やAIモデル開発に使用" },
 ];
