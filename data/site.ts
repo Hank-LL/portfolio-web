@@ -14,7 +14,7 @@ export const SITE = {
   avatarImage: "/images/avatar-icon.jpg",            // 例: "/images/avatar.png"
   about: [
     "制作ゲームやプロジェクトの紹介していきます！",
-    "プロジェクトから作品に触れてみてくみてね！",
+    "プロジェクトから作品に触れてみてね！",
   ],
   hobbies: "ゲーム、映画鑑賞、バドミントン、ゴルフ、テニス",
 
