@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { Project } from "@/data/projects";
 import { PlatformBadge } from "@/components/platforms";
+import { projectImages } from "@/components/GalleryModal";
 
 export default function FeaturedCarousel({
   projects,
@@ -52,13 +53,14 @@ export default function FeaturedCarousel({
         >
           {projects.map((p, i) => {
             const href = p.projectUrl ?? p.repoUrl;
+            const cover = projectImages(p)[0];
             const inner = (
               <>
-                {p.image ? (
+                {cover ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     className="carousel-bg"
-                    src={p.image}
+                    src={cover}
                     alt={`${p.title}のスクリーンショット`}
                   />
                 ) : (

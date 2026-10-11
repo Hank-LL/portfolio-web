@@ -4,6 +4,11 @@ import { useState } from "react";
 import type { Project } from "@/data/projects";
 import { getPlatform, platformIcon, PlatformBadge } from "@/components/platforms";
 import VideoModal, { PlayButton } from "@/components/VideoModal";
+import GalleryModal, {
+  GalleryButton,
+  PhotoCountBadge,
+  projectImages,
+} from "@/components/GalleryModal";
 
 export default function ProjectCard({
   project,
@@ -14,8 +19,11 @@ export default function ProjectCard({
 }) {
   const [flipped, setFlipped] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [galleryOpen, setGalleryOpen] = useState(false);
   const [tilt, setTilt] = useState({ rx: 0, ry: 0 });
   const plat = getPlatform(project.platform);
+  const images = projectImages(project);
+  const cover = images[0];
   const toggle = () => setFlipped((f) => !f);
 
   // カーソル位置に応じてカードを傾ける(表でも裏でも動作)
@@ -28,6 +36,7 @@ export default function ProjectCard({
   const onMouseLeave = () => setTilt({ rx: 0, ry: 0 });
 
   return (
+    <>
     <div
       className={`flip-card ${flipped ? "flipped" : ""}`}
       role="button"
@@ -51,11 +60,11 @@ export default function ProjectCard({
         <div className="flip-inner">
           {/* ---------- 表面:ビジュアル ---------- */}
           <div className="flip-front">
-            {project.image ? (
+            {cover ? (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
                 className="flip-bg"
-                src={project.image}
+                src={cover}
                 alt={`${project.title}のスクリーンショット`}
               />
             ) : (
@@ -64,6 +73,9 @@ export default function ProjectCard({
               </div>
             )}
             <div className="flip-front-overlay" />
+            {images.length > 1 && (
+              <PhotoCountBadge count={images.length} onClick={() => setGalleryOpen(true)} />
+            )}
             <PlatformBadge
               platform={project.platform}
               href={project.projectUrl ?? project.repoUrl}
@@ -79,9 +91,9 @@ export default function ProjectCard({
 
           {/* ---------- 裏面:詳細(表の画像がうっすら透ける) ---------- */}
           <div className="flip-back">
-            {project.image ? (
+            {cover ? (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img className="back-bg" src={project.image} alt="" aria-hidden="true" />
+              <img className="back-bg" src={cover} alt="" aria-hidden="true" />
             ) : (
               <div className="back-bg" style={{ background: gradient }} />
             )}
@@ -125,6 +137,9 @@ export default function ProjectCard({
               <div className="card-links" onClick={(e) => e.stopPropagation()}>
                 {project.video && (
                   <PlayButton className="on-back" onClick={() => setVideoOpen(true)} />
+                )}
+                {images.length > 1 && (
+                  <GalleryButton className="on-back" onClick={() => setGalleryOpen(true)} />
                 )}
                 {project.projectUrl ? (
                   <>
@@ -173,14 +188,23 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
-
-      {videoOpen && project.video && (
-        <VideoModal
-          src={project.video}
-          title={project.title}
-          onClose={() => setVideoOpen(false)}
-        />
-      )}
     </div>
+
+    {/* モーダルはカードの外に置く(ポータル内のクリックがカードの裏返しに伝わらないように) */}
+    {videoOpen && project.video && (
+      <VideoModal
+        src={project.video}
+        title={project.title}
+        onClose={() => setVideoOpen(false)}
+      />
+    )}
+    {galleryOpen && (
+      <GalleryModal
+        images={images}
+        title={project.title}
+        onClose={() => setGalleryOpen(false)}
+      />
+    )}
+    </>
   );
 }

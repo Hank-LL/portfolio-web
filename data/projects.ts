@@ -2,6 +2,7 @@
 // ▼ 作品を追加するときは、この配列にオブジェクトを1つ追記するだけ ▼
 //    追記して git push すれば、Vercelが自動でサイトを更新します。
 //    スクリーンショットは public/images/ に置いて image に指定します。
+//    複数枚あるときは images: ["/images/a.png", "/images/b.png"] のように並べます。
 // =====================================================================
 
 export type Project = {
@@ -12,6 +13,7 @@ export type Project = {
   date?: string;        // 公開日など(例: "2025年12月31日")
   emoji?: string;       // 画像がないときに表示するアイコン
   image?: string;       // 例: "/images/starhopper.png"(public/images/ に置く)
+  images?: string[];    // 写真を複数枚載せる場合はこちら(1枚目がカードの表紙になります)
   projectUrl?: string;  // 「プロジェクトを見る」で飛ぶURL
   video?: string;       // 紹介動画。"/videos/xxx.mp4"(public/videos/ に置く)またはYouTubeのURL
   repoUrl?: string;     // GitHubリポジトリ(なければ省略)
