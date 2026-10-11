@@ -29,7 +29,11 @@ export const PROJECTS: Project[] = [
     platform: "unityroom",
     date: "2025年8月11日",
     projectUrl: "https://unityroom.com/games/kimigahikute",
-    image: "/images/projects/kimigahikute.png",
+    images: [
+      "/images/projects/kimigahikute.png",
+      "/images/projects/kimigahikute-choice.webp",
+      "/images/projects/kimigahikute-locker.webp",
+    ],
     featured: true,
   },
   {
