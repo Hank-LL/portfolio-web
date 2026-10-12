@@ -56,10 +56,10 @@ export const PROJECTS: Project[] = [
   {
     title: "OutLasso",
     description:
-      "敵を捕まえて投げる！ヴァンサバ風キャッチ＆シュートゲーム。担当：敵の挙動と演出、UIの実装",
+      "敵を捕まえて投げる！ヴァンサバ風キャッチ＆シュートゲーム。BitSummit2026 出展作品。担当：敵の挙動と演出、UIの実装",
     tags: ["Unity", "C#"],
     platform: "itch.io",
-    date: "2026年",
+    date: "2026年5月22日",
     projectUrl: "https://bitsummit-gamejam.itch.io/outlasso",
     video: "https://youtu.be/k0monEFwUR8",
     images: [
