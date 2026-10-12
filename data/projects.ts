@@ -89,6 +89,16 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: "Kaggle PTCG AI Battle Challenge",
+    description:
+      "Kaggle「PTCG AIバトルチャレンジ」シミュレーション部門で6,807チーム中300位、銀メダルを獲得。模倣学習・強化学習・ヒューリスティックを組み合わせてカードゲームの対戦AIを開発。",
+    tags: ["AI開発", "Python"],
+    platform: "GitHub",
+    date: "2026年8月",
+    repoUrl: "https://github.com/Hank-LL/ptcg-strategy-code",
+    image: "/images/projects/ptcg-kaggle-certificate.png",
+  },
+  {
     title: "OutLasso",
     description:
       "敵を捕まえて投げる！ヴァンサバ風キャッチ＆シュートゲーム。BitSummit2026 出展作品。担当：敵の挙動と演出、UIの実装",
