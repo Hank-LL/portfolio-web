@@ -132,59 +132,6 @@ export const PROJECTS: Project[] = [
       "/images/projects/alien-buster-battle.jpg",
     ],
   },
-  {
-    title: "Steam公開サンプル『VOID GARDEN』",
-    description:
-      "Steamアイコンの表示確認用サンプル。デッキ構築型ローグライクの想定。",
-    tags: ["Unity", "C#", "Steam"],
-    platform: "Steam",
-    date: "2025年12月31日",
-    emoji: "🌱",
-    projectUrl: "https://store.steampowered.com/",
-    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // 例: YouTubeでもmp4でもOK
-    featured: true,
-  },
-  {
-    title: "itch.io公開サンプル『NIGHT LOOP』",
-    description:
-      "itch.ioアイコンの表示確認用サンプル。ゲームジャム参加作品の想定。",
-    tags: ["Godot", "GDScript", "ゲームジャム"],
-    platform: "itch.io",
-    date: "2025年7月17日",
-    emoji: "🌙",
-    projectUrl: "https://itch.io/",
-    featured: true,
-  },
-  {
-    title: "BOOTH頒布サンプル『ドット絵素材集』",
-    description:
-      "Boothアイコンの表示確認用サンプル。素材集やツールの頒布の想定。",
-    tags: ["ドット絵", "素材"],
-    platform: "BOOTH",
-    date: "2025年5月5日",
-    emoji: "🎨",
-    projectUrl: "https://booth.pm/",
-  },
-  {
-    title: "HuggingFace公開サンプル『pixel-gen』",
-    description:
-      "HuggingFaceアイコンの表示確認用サンプル。ドット絵生成モデルのデモの想定。",
-    tags: ["Python", "PyTorch", "機械学習"],
-    platform: "Hugging Face",
-    date: "2025年4月10日",
-    emoji: "🤗",
-    projectUrl: "https://huggingface.co/",
-  },
-  {
-    title: "GitHub公開サンプル『img-min』",
-    description:
-      "GitHubアイコンの表示確認用サンプル。画像をまとめて圧縮するCLIツールの想定。",
-    tags: ["Node.js", "TypeScript", "CLI"],
-    platform: "GitHub",
-    date: "2025年3月2日",
-    emoji: "🛠️",
-    repoUrl: "https://github.com/",
-  },
 ];
 
 // ▼ スキルもここに追記するだけ(Aboutページに表示されます)
