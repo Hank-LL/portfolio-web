@@ -7,6 +7,7 @@ export const SITE = {
   email: "you@example.com",
   github: "https://github.com/Hank-LL",
   twitter: "https://x.com/8ankS_G",
+  huggingface: "https://huggingface.co/HankLL",
   contactMessage: "お気軽にお問い合わせください。",
 
   // ---- Aboutページの内容 ----
