@@ -54,6 +54,22 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    title: "ONE MORE ROULETTE",
+    description:
+      "【ロシアンルーレット風の運勝負ゲーム】リスクが増すほどスコアがアップ！MVPアーキテクチャを採用した実装とDOTweenを用いた演出に挑戦した作品。",
+    tags: ["Unity", "C#", "DOTween"],
+    platform: "unityroom",
+    date: "2026年1月6日",
+    projectUrl: "https://unityroom.com/games/one_more_roulette",
+    video: "https://youtu.be/Ic0ZauiQSyc",
+    images: [
+      "/images/projects/one-more-roulette-cylinder.webp",
+      "/images/projects/one-more-roulette-reload.gif",
+      "/images/projects/one-more-roulette-jackpot.webp",
+      "/images/projects/one-more-roulette-dead.webp",
+    ],
+  },
+  {
     title: "エイリアンバスター",
     description:
       "3Dシューティングゲーム。初めてゲーム開発した作品。開発期間：1ヶ月半",
