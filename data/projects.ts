@@ -41,8 +41,8 @@ export const PROJECTS: Project[] = [
   {
     title: "音声認識による配膳ロボットアームシステム",
     description:
-      "AMD Robotics Hackathon 2025 で開発した「Sushi Master」。模倣学習でメニューごとのAI行動モデルを開発し、SO-101ロボットアームの配膳動作はそのモデルが実行。「赤いやつ」のような曖昧な音声注文もAIで解釈して寿司を選ぶ。",
-    tags: ["AI開発", "AI活用", "Python", "LeRobot", "Hugging Face"],
+      "AMD Robotics Hackathon 2025 で開発した「Sushi Master」。模倣学習でメニューごとのAI行動モデルを開発し、SO-101ロボットアームの配膳動作はそのモデルが実行。音声注文もAIで解釈して寿司を選ぶ。",
+    tags: ["AI開発", "AI組込み", "Python", "LeRobot", "Hugging Face"],
     platform: "Web",
     date: "2025年12月7日",
     projectUrl: "https://moriokalab.com/news/1030",
