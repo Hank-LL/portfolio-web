@@ -71,6 +71,17 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: "aMOEba",
+    description:
+      "かわいいアメーバのステルスアクションゲーム。BitSummit2025 出展作品",
+    tags: ["Unity", "C#"],
+    platform: "itch.io",
+    date: "2025年7月19日",
+    emoji: "🦠",
+    projectUrl: "https://bitsummit-gamejam.itch.io/amoeba",
+    video: "https://youtu.be/4fMW4pCophU",
+  },
+  {
     title: "ONE MORE ROULETTE",
     description:
       "【ロシアンルーレット風の運勝負ゲーム】リスクが増すほどスコアがアップ！MVPアーキテクチャを採用した実装とDOTweenを用いた演出に挑戦した作品。",
