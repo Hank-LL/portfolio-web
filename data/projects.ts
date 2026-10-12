@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     description:
       "声優を目指す少女の青春系ノベルゲーム。ミニゲームや選択肢を通して夢を叶えよう。",
     tags: ["Unity", "C#"],
-    date: "2025年〜 開発中",
+    date: "2026年10月",
     images: [
       "/images/projects/afureko-title.webp",
       "/images/projects/afureko-studio.webp",
