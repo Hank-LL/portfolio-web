@@ -22,6 +22,21 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    title: "あふれこ",
+    description:
+      "声優を目指す少女の青春系ノベルゲーム。ミニゲームや選択肢を通して夢を叶えよう。",
+    tags: ["Unity", "C#"],
+    date: "2025年〜 開発中",
+    images: [
+      "/images/projects/afureko-title.webp",
+      "/images/projects/afureko-studio.webp",
+      "/images/projects/afureko-night-street.webp",
+      "/images/projects/afureko-cutin.webp",
+      "/images/projects/afureko-studio-teacher.webp",
+      "/images/projects/afureko-choice.webp",
+    ],
+  },
+  {
     title: "君が引く手",
     description:
       "Unity1週間ゲームジャム[ひく]参加作品。『手を引く』か『手を引かない』かを選択するだけのマルチエンディングノベルゲーム。実況実績あり！ ",
