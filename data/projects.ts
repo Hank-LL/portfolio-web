@@ -59,6 +59,7 @@ export const PROJECTS: Project[] = [
     platform: "unityroom",
     date: "2024年4月",
     projectUrl: "https://unityroom.com/games/shooting_ver2",
+    video: "https://youtu.be/pqdcRcYF8I4",
     images: [
       "/images/projects/alien-buster-closeup.jpg",
       "/images/projects/alien-buster-title.webp",
