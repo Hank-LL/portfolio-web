@@ -39,6 +39,22 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: "音声認識による配膳ロボットアームシステム",
+    description:
+      "AMD Robotics Hackathon 2025 で開発した「Sushi Master」。「赤いやつ」のような曖昧な音声注文もWhisperとGemini APIで解釈し、SO-101ロボットアームが寿司を配膳する。メニューごとにACTモデルを切り替えるマルチモデル構成。",
+    tags: ["Python", "LeRobot", "Whisper", "Gemini API", "Hugging Face"],
+    platform: "Web",
+    date: "2025年12月7日",
+    projectUrl: "https://moriokalab.com/news/1030",
+    repoUrl: "https://github.com/Hank-LL/AMD_Robotics_Hackathon_2025_Team27",
+    video: "https://youtu.be/dbQwMPikCeI",
+    images: [
+      "/images/projects/sushi-master-serving.webp",
+      "/images/projects/sushi-master-voice-order.webp",
+      "/images/projects/sushi-master-tea.webp",
+    ],
+  },
+  {
     title: "君が引く手",
     description:
       "Unity1週間ゲームジャム[ひく]参加作品。『手を引く』か『手を引かない』かを選択するだけのマルチエンディングノベルゲーム。実況実績あり！ ",
