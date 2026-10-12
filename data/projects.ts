@@ -70,6 +70,25 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    title: "Yoripo",
+    description:
+      "気分と寄り道できる時間から、気分に合う場所を通る遠回りルートを提案する寄り道案内アプリ。ハッカソン作品。担当：ルート提示アルゴリズムの設計と実装",
+    tags: ["TypeScript", "Next.js", "Google Maps API", "Gemini API"],
+    date: "2026年9月3日",
+    video: "https://youtube.com/shorts/2oMM5XnFaG4",
+    images: [
+      "/images/projects/yoripo-promo.png",
+      "/images/projects/yoripo-algorithm.png",
+      "/images/projects/yoripo-route-scoring.png",
+      "/images/projects/yoripo-login.png",
+      "/images/projects/yoripo-destination.png",
+      "/images/projects/yoripo-mood.png",
+      "/images/projects/yoripo-place.png",
+      "/images/projects/yoripo-duration.png",
+      "/images/projects/yoripo-guide.png",
+    ],
+  },
+  {
     title: "OutLasso",
     description:
       "敵を捕まえて投げる！ヴァンサバ風キャッチ＆シュートゲーム。BitSummit2026 出展作品。担当：敵の挙動と演出、UIの実装",
