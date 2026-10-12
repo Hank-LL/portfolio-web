@@ -26,7 +26,9 @@ export const PROJECTS: Project[] = [
     description:
       "声優を目指す少女の青春系ノベルゲーム。ミニゲームや選択肢を通して夢を叶えよう。",
     tags: ["Unity", "C#"],
+    platform: "unityroom",
     date: "2026年10月",
+    projectUrl: "https://unityroom.com/games/afureko",
     images: [
       "/images/projects/afureko-title.webp",
       "/images/projects/afureko-studio.webp",
