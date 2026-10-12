@@ -52,6 +52,21 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    title: "エイリアンバスター",
+    description:
+      "3Dシューティングゲーム。初めてゲーム開発した作品。開発期間：1ヶ月半",
+    tags: ["Unity", "C#"],
+    platform: "unityroom",
+    date: "2024年4月",
+    projectUrl: "https://unityroom.com/games/shooting_ver2",
+    images: [
+      "/images/projects/alien-buster-closeup.jpg",
+      "/images/projects/alien-buster-title.webp",
+      "/images/projects/alien-buster-horde.jpg",
+      "/images/projects/alien-buster-battle.jpg",
+    ],
+  },
+  {
     title: "Steam公開サンプル『VOID GARDEN』",
     description:
       "Steamアイコンの表示確認用サンプル。デッキ構築型ローグライクの想定。",
