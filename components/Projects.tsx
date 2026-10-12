@@ -8,8 +8,9 @@ import { PALETTE } from "@/components/palette";
 // "2025年10月1日" / "2025-10-01" / "2025/10/1" などを数値に変換(なければ0)
 function dateValue(d?: string): number {
   if (!d) return 0;
-  const jp = d.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
-  if (jp) return new Date(+jp[1], +jp[2] - 1, +jp[3]).getTime();
+  // "2026年10月" や "2026年" のように月・日を省略した表記も可(省略分は1日/1月扱い)
+  const jp = d.match(/(\d{4})年(?:(\d{1,2})月(?:(\d{1,2})日)?)?/);
+  if (jp) return new Date(+jp[1], (+jp[2] || 1) - 1, +jp[3] || 1).getTime();
   const t = Date.parse(d.replace(/\//g, "-"));
   return Number.isNaN(t) ? 0 : t;
 }
