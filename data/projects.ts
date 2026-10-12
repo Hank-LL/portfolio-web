@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Kaggle PTCG AI Battle Challenge",
     description:
-      "Kaggle「PTCG AIバトルチャレンジ」シミュレーション部門で6,807チーム中300位、銀メダルを獲得。模倣学習・強化学習・ヒューリスティックを組み合わせてカードゲームの対戦AIを開発。",
+      "Kaggle「PTCG AIバトルチャレンジ」シミュレーション部門で6,807チーム中300位、銀メダルを獲得。模倣学習・強化学習・ヒューリスティックのそれぞれの手法でカードゲームの対戦AIを開発。",
     tags: ["AI開発", "Python"],
     platform: "GitHub",
     date: "2026年8月",
