@@ -54,6 +54,23 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    title: "OutLasso",
+    description:
+      "敵を捕まえて投げる！ヴァンサバ風キャッチ＆シュートゲーム。担当：敵の挙動と演出、UIの実装",
+    tags: ["Unity", "C#"],
+    platform: "itch.io",
+    date: "2026年",
+    projectUrl: "https://bitsummit-gamejam.itch.io/outlasso",
+    video: "https://youtu.be/k0monEFwUR8",
+    images: [
+      "/images/projects/outlasso-title.webp",
+      "/images/projects/outlasso-tutorial.webp",
+      "/images/projects/outlasso-battle.webp",
+      "/images/projects/outlasso-wanted-boss.webp",
+      "/images/projects/outlasso-wanted-duo.webp",
+    ],
+  },
+  {
     title: "ONE MORE ROULETTE",
     description:
       "【ロシアンルーレット風の運勝負ゲーム】リスクが増すほどスコアがアップ！MVPアーキテクチャを採用した実装とDOTweenを用いた演出に挑戦した作品。",
