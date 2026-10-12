@@ -28,6 +28,7 @@ export default function AboutPage() {
             <div className="profile-links">
               <a className="btn" href={SITE.github} target="_blank" rel="noopener noreferrer">GitHub</a>
               <a className="btn" href={SITE.twitter} target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+              <a className="btn" href={SITE.huggingface} target="_blank" rel="noopener noreferrer">Hugging Face</a>
             </div>
           </div>
         </div>
