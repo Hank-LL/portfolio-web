@@ -86,6 +86,21 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: "VOID RED",
+    description: "記憶と感情を揺さぶる対話型カードゲーム。",
+    tags: ["Unity", "C#"],
+    platform: "Steam",
+    date: "2026年1月",
+    projectUrl: "https://store.steampowered.com/app/3997140/VOID_RED/",
+    images: [
+      "/images/projects/void-red-key-visual.png",
+      "/images/projects/void-red-battle.jpg",
+      "/images/projects/void-red-choose-card.jpg",
+      "/images/projects/void-red-dialogue.jpg",
+      "/images/projects/void-red-spirit-card.jpg",
+    ],
+  },
+  {
     title: "ONE MORE ROULETTE",
     description:
       "【ロシアンルーレット風の運勝負ゲーム】リスクが増すほどスコアがアップ！MVPアーキテクチャを採用した実装とDOTweenを用いた演出に挑戦した作品。",
