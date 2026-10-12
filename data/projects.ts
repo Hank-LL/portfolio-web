@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
     title: "Yoripo",
     description:
       "気分と寄り道できる時間から、気分に合う場所を通る遠回りルートを提案する寄り道案内アプリ。ハッカソン作品。担当：ルート提示アルゴリズムの設計と実装",
-    tags: ["TypeScript", "Next.js", "Google Maps API", "Gemini API"],
+    tags: ["TypeScript", "Next.js", "AI組込み"],
     date: "2026年9月3日",
     video: "https://youtube.com/shorts/2oMM5XnFaG4",
     images: [
