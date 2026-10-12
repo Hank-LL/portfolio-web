@@ -37,6 +37,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/afureko-studio-teacher.webp",
       "/images/projects/afureko-choice.webp",
     ],
+    featured: true,
   },
   {
     title: "音声認識による配膳ロボットアームシステム",
@@ -53,6 +54,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/sushi-master-voice-order.webp",
       "/images/projects/sushi-master-tea.webp",
     ],
+    featured: true,
   },
   {
     title: "君が引く手",
@@ -87,6 +89,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/yoripo-duration.png",
       "/images/projects/yoripo-guide.png",
     ],
+    featured: true,
   },
   {
     title: "Kaggle PTCG AI Battle Challenge",
@@ -97,6 +100,7 @@ export const PROJECTS: Project[] = [
     date: "2026年8月",
     repoUrl: "https://github.com/Hank-LL/ptcg-strategy-code",
     image: "/images/projects/ptcg-kaggle-certificate.png",
+    featured: true,
   },
   {
     title: "OutLasso",
@@ -129,6 +133,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/amoeba-eat.png",
       "/images/projects/amoeba-spotted.png",
     ],
+    featured: true,
   },
   {
     title: "VOID RED",
@@ -144,6 +149,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/void-red-dialogue.jpg",
       "/images/projects/void-red-spirit-card.jpg",
     ],
+    featured: true,
   },
   {
     title: "ONE MORE ROULETTE",
