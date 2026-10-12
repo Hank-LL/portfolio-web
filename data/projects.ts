@@ -77,9 +77,13 @@ export const PROJECTS: Project[] = [
     tags: ["Unity", "C#"],
     platform: "itch.io",
     date: "2025年7月19日",
-    emoji: "🦠",
     projectUrl: "https://bitsummit-gamejam.itch.io/amoeba",
     video: "https://youtu.be/4fMW4pCophU",
+    images: [
+      "/images/projects/amoeba-title.jpg",
+      "/images/projects/amoeba-eat.png",
+      "/images/projects/amoeba-spotted.png",
+    ],
   },
   {
     title: "ONE MORE ROULETTE",
